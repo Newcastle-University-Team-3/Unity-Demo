@@ -16,6 +16,8 @@ TagManager:
   - Wood (Static)
   - Dirt (Static)
   - Wood
+  - CinemachineTarget
+  - Floor
   layers:
   - Default
   - TransparentFX

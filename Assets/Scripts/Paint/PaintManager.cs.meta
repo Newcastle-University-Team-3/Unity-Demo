@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 15c325fdd8eddc447b509a30be29fee2
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - texturePaint: {fileID: 4800000, guid: b3f91f9d3e626d647b30517cb7d338e8, type: 3}
+  - extendIslands: {fileID: 4800000, guid: 5dc65f1a2195823469b05826ed178bd6, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -24,4 +24,12 @@ public class BulletProjectile : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Floor")
+        {
+            collision.gameObject.transform.GetComponent<MeshRenderer>().material.color = Color.black;
+        }
+    }
 }
