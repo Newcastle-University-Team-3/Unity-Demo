@@ -463,7 +463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 717344733}
   mouseSingleClick: 0
-  paintColor: {r: 0.9433962, g: 0.22694907, b: 0.22694907, a: 0}
+  paintColor: {r: 0.9433962, g: 0.22694907, b: 0.22694907, a: 1}
   radius: 1.5
   strength: 0.5
   hardness: 1
