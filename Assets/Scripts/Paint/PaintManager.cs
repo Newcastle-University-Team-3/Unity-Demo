@@ -11,7 +11,7 @@ public class PaintManager : Singleton<PaintManager>
     public Shader extendIslands;    //?
 
     private int prepareUVID = Shader.PropertyToID("_PrepareUV");
-    private int positionID = Shader.PropertyToID("_PaintPosition");
+    private int positionID = Shader.PropertyToID("_PainterPosition");
     private int radiusID = Shader.PropertyToID("_Radius");
     private int strengthID = Shader.PropertyToID("_Strength");
     private int hardnessID = Shader.PropertyToID("_Hardness");
