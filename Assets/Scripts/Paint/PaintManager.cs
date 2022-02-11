@@ -16,7 +16,7 @@ public class PaintManager : Singleton<PaintManager>
     private int strengthID = Shader.PropertyToID("_Strength");
     private int hardnessID = Shader.PropertyToID("_Hardness");
     private int textureID = Shader.PropertyToID("_MainTex");
-    private int colorID = Shader.PropertyToID("_PaintColor");
+    private int colorID = Shader.PropertyToID("_PainterColor");
 
     ////?
     private int uvOffsetID = Shader.PropertyToID("_OffsetUV");
