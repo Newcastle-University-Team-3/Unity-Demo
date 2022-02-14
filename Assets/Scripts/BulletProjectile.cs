@@ -20,11 +20,6 @@ public class BulletProjectile : MonoBehaviour
         bulletRigidbody.velocity = transform.forward * speed;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //Destroy(gameObject);
-    }
-
     private void OnCollisionEnter(Collision collision)
     {
         Paintable p = collision.collider.GetComponent<Paintable>();
@@ -33,5 +28,10 @@ public class BulletProjectile : MonoBehaviour
         {
             PaintManager.instance.paint(p,pos,1.0f,0.5f,0.5f,Color.blue);
         }
+    }
+
+    private void OnCollisionExit(Collision other)
+    {
+        Destroy(gameObject);
     }
 }
