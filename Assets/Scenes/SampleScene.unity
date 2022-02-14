@@ -222,7 +222,7 @@ Transform:
   m_LocalScale: {x: 33.171204, y: 18.23348, z: 1}
   m_Children: []
   m_Father: {fileID: 96675205}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &47584353 stripped
 Transform:
@@ -260,12 +260,12 @@ Transform:
   - {fileID: 209542771}
   - {fileID: 159497438}
   - {fileID: 735035114}
+  - {fileID: 1030329451}
   - {fileID: 1878466506}
   - {fileID: 45116732}
   - {fileID: 1436184035}
   - {fileID: 666466494}
   - {fileID: 893100648}
-  - {fileID: 1030329451}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -294,6 +294,7 @@ GameObject:
   - component: {fileID: 159497436}
   - component: {fileID: 159497435}
   - component: {fileID: 159497434}
+  - component: {fileID: 159497439}
   m_Layer: 0
   m_Name: Plane_2
   m_TagString: Untagged
@@ -394,6 +395,19 @@ Transform:
   m_Father: {fileID: 96675205}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &159497439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 159497433}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff39bbed671b576499c775d6320e1f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendIsLandOffset: 1
 --- !u!4 &159551392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1077566915252989923, guid: 369073e574180004383b0c3fbef76725,
@@ -413,6 +427,7 @@ GameObject:
   - component: {fileID: 209542769}
   - component: {fileID: 209542768}
   - component: {fileID: 209542767}
+  - component: {fileID: 209542772}
   m_Layer: 0
   m_Name: Plane_1
   m_TagString: Untagged
@@ -513,6 +528,19 @@ Transform:
   m_Father: {fileID: 96675205}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &209542772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 209542766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff39bbed671b576499c775d6320e1f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendIsLandOffset: 1
 --- !u!4 &257185030 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1077566915222238533, guid: 369073e574180004383b0c3fbef76725,
@@ -948,7 +976,7 @@ Transform:
   m_LocalScale: {x: 33.171204, y: 18.23348, z: 1}
   m_Children: []
   m_Father: {fileID: 96675205}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &674425315 stripped
 Transform:
@@ -1080,6 +1108,7 @@ GameObject:
   - component: {fileID: 735035112}
   - component: {fileID: 735035111}
   - component: {fileID: 735035110}
+  - component: {fileID: 735035115}
   m_Layer: 0
   m_Name: Plane_3
   m_TagString: Untagged
@@ -1180,6 +1209,19 @@ Transform:
   m_Father: {fileID: 96675205}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &735035115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735035109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff39bbed671b576499c775d6320e1f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendIsLandOffset: 1
 --- !u!4 &799095746 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1077566914684623745, guid: 369073e574180004383b0c3fbef76725,
@@ -1361,8 +1403,53 @@ Transform:
   m_LocalScale: {x: 33.171204, y: 34.64726, z: 1}
   m_Children: []
   m_Father: {fileID: 96675205}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 90, y: 90, z: 0}
+--- !u!1 &923074830
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 923074832}
+  - component: {fileID: 923074831}
+  m_Layer: 0
+  m_Name: PaintManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &923074831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923074830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c325fdd8eddc447b509a30be29fee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  texturePaint: {fileID: 4800000, guid: b3f91f9d3e626d647b30517cb7d338e8, type: 3}
+  extendIslands: {fileID: 4800000, guid: 5dc65f1a2195823469b05826ed178bd6, type: 3}
+--- !u!4 &923074832
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923074830}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.5962715, y: -4.2971587, z: 16.33456}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &930931674 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1077566914552677273, guid: 369073e574180004383b0c3fbef76725,
@@ -1472,6 +1559,7 @@ GameObject:
   - component: {fileID: 1030329449}
   - component: {fileID: 1030329448}
   - component: {fileID: 1030329452}
+  - component: {fileID: 1030329453}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -1554,7 +1642,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 96675205}
-  m_RootOrder: 8
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1030329452
 Rigidbody:
@@ -1572,6 +1660,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1030329453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030329447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff39bbed671b576499c775d6320e1f1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  extendIsLandOffset: 1
 --- !u!4 &1096005743 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1077566914316671020, guid: 369073e574180004383b0c3fbef76725,
@@ -1957,7 +2058,7 @@ Transform:
   m_LocalScale: {x: 33.171204, y: 18.23348, z: 1}
   m_Children: []
   m_Father: {fileID: 96675205}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!4 &1462867162 stripped
 Transform:
@@ -2148,7 +2249,7 @@ Transform:
   m_LocalScale: {x: 33.171204, y: 18.23348, z: 1}
   m_Children: []
   m_Father: {fileID: 96675205}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1883436304
 GameObject:
@@ -2876,12 +2977,7 @@ PrefabInstance:
     - target: {fileID: 1077566915285685364, guid: 369073e574180004383b0c3fbef76725,
         type: 3}
       propertyPath: m_WarningMessage
-      value: "\nBinding warning: Some generic clip(s) animate transforms that are
-        already bound by a Humanoid avatar. These transforms can only be changed
-        by Humanoid clips.\n\tTransform 'Elbow_R'\n\tTransform 'Elbow_L'\n\tTransform
-        'Hand_L'\n\tTransform 'Shoulder_L'\n\tTransform 'Shoulder_R'\n\tTransform
-        'Hand_R'\n\tTransform 'Elbow_R'\n\tTransform 'Elbow_L'\n\tTransform 'Hand_L'\n\tTransform
-        'Shoulder_L'\n\tand more ..."
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1235843244320672247, guid: 369073e574180004383b0c3fbef76725,
         type: 3}

@@ -22,14 +22,16 @@ public class BulletProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        //Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Floor")
+        Paintable p = collision.collider.GetComponent<Paintable>();
+        Vector3 pos = collision.contacts[0].point;
+        if (p!=null)
         {
-            collision.gameObject.transform.GetComponent<MeshRenderer>().material.color = Color.black;
+            PaintManager.instance.paint(p,pos,1.0f,0.5f,0.5f,Color.red);
         }
     }
 }
