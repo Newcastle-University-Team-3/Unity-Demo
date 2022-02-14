@@ -31,7 +31,7 @@ public class BulletProjectile : MonoBehaviour
         Vector3 pos = collision.contacts[0].point;
         if (p!=null)
         {
-            PaintManager.instance.paint(p,pos,1.0f,0.5f,0.5f,Color.red);
+            PaintManager.instance.paint(p,pos,1.0f,0.5f,0.5f,Color.blue);
         }
     }
 }
