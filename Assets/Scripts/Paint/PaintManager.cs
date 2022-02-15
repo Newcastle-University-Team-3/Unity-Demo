@@ -8,7 +8,7 @@ using UnityEngine.Rendering;
 public class PaintManager : Singleton<PaintManager>
 {
     public Shader texturePaint; //Paint with texture
-    public Shader extendIslands;    //?
+    public Shader extendIslands;    //Unfold texture and Get UVs that located on it
 
     private int prepareUVID = Shader.PropertyToID("_PrepareUV");
     private int positionID = Shader.PropertyToID("_PainterPosition");
@@ -87,8 +87,8 @@ public class PaintManager : Singleton<PaintManager>
         commandBuffer.SetRenderTarget(mask);
         commandBuffer.DrawRenderer(renderer,paintMaterial,0);
 
-        commandBuffer.SetRenderTarget(support);
-        commandBuffer.Blit(mask,support);
+        //commandBuffer.SetRenderTarget(support);
+        //commandBuffer.Blit(mask,support);
 
         commandBuffer.SetRenderTarget(extend);
         commandBuffer.Blit(mask,extend,extendMaterial);

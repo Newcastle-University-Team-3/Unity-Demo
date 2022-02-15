@@ -59,7 +59,7 @@ Shader "Unlit/ExtendInMesh"
 					for(int i = 0; i<8;i++)
 					{
 						float2 currentUV = uv + offsets[i] * _MainTex_TexelSize.xy; 	//当前的uv坐标在原有的贴图上等比例的偏移一个范围取值
-						float4 offsettedColor = tex2D(_MainTex, currentUV);		//偏移之后坐标在原有贴图上的取得的颜色
+						float4 offsettedColor = tex2D(_MainTex, currentUV);		//偏移之后坐标在原有贴图上的取得的颜色?
 						extendColor = max(offsettedColor, extendColor);
 					}
 					color = extendColor;		
