@@ -61,8 +61,6 @@
     <Compile Include="Assets\SMC Pack 1\Demo\DemoAssets\V_Text.cs" />
     <Compile Include="Assets\Scripts\Controller\SphereCollide.cs" />
     <Compile Include="Assets\Scripts\Singleton\Singleton.cs" />
-    <Compile Include="Assets\Assets_OUTER\MC-1 USSR Toon Tank Big\Scripts\SimpleControl.cs" />
-    <Compile Include="Assets\Assets_OUTER\MC-1 USSR Toon Tank Big\Scripts\CameraOrbit.cs" />
     <Compile Include="Assets\Scripts\Paint\MousePainter.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\CanvasInputs\UICanvasControllerInput.cs" />
     <Compile Include="Assets\StarterAssets\Mobile\Scripts\Utilities\MobileDisableAutoSwitchControls.cs" />
@@ -86,19 +84,19 @@
     <Compile Include="Assets\SMC Pack 1\Demo\DemoAssets\V_SMC_Camera.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Tutorial(TEMP)\Grid.cs" />
+    <Compile Include="Assets\Scripts\Paint\PaintInMesh.cs" />
+    <Compile Include="Assets\Scripts\Paint\TestPaint.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets_OUTER\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
     <None Include="Assets\Shader\ShaderTurtorial\LightShader.shader" />
     <None Include="Assets\Assets_OUTER\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Mdb.dll" />
     <None Include="Assets\PolygonSciFiSpace\Shaders\SyntyStudios_Asteroid.shader" />
-    <None Include="Assets\Shader\Test01.shader" />
     <None Include="Assets\ScriptTemplates\51-Mirror__Network Authenticator-NewNetworkAuthenticator.cs.txt" />
     <None Include="Assets\Assets_OUTER\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Pdb.dll" />
     <None Include="Assets\PolygonSciFiSpace\Shaders\POLYGON_Triplanar.shader" />
     <None Include="Assets\Shader\Paint\texturePaint.shader" />
     <None Include="Assets\ScriptTemplates\56-Mirror__Network Discovery-NewNetworkDiscovery.cs.txt" />
-    <None Include="Assets\Assets_OUTER\MC-1 USSR Toon Tank Big\README.txt" />
     <None Include="Assets\Shader\ShaderTurtorial\HealthBar.shader" />
     <None Include="Assets\Assets_OUTER\Mirror\Plugins\Mono.Cecil\Mono.CecilX.Rocks.dll" />
     <None Include="Assets\Shader\ShaderTurtorial\VertexOffset.shader" />
@@ -110,7 +108,7 @@
     <None Include="Assets\Assets_OUTER\ParrelSync\VERSION.txt" />
     <None Include="Assets\StarterAssets\license.txt" />
     <None Include="Assets\ScriptTemplates\52-Mirror__Network Behaviour-NewNetworkBehaviour.cs.txt" />
-    <None Include="Assets\Shader\NewSurfaceShader.shader" />
+    <None Include="Assets\Shader\Paint\PaintInMesh.shader" />
     <None Include="Assets\Assets_OUTER\Mirror\Notice.txt" />
     <None Include="Assets\PolygonSciFiSpace\Shaders\SyntyStudios_Planet.shader" />
     <None Include="Assets\Shader\ShaderTurtorial\CubeShader.shader" />
@@ -119,6 +117,7 @@
     <None Include="Assets\PolygonSciFiSpace\Shaders\SyntyStudios_Planet_Lines.shader" />
     <None Include="Assets\ScriptTemplates\53-Mirror__Custom Interest Management-CustomInterestManagement.cs.txt" />
     <None Include="Assets\Assets_OUTER\Hovl Studio\Procedural fire\Shaders\FireSphere.shader" />
+    <None Include="Assets\Shader\Paint\ExtendInMesh.shader" />
     <None Include="Assets\Shader\Paint\ExtendPaint.shader" />
     <None Include="Assets\StarterAssets\Environment\Shaders\Built-in_RP\ArmatureShader.shader" />
     <None Include="Assets\PolygonSciFiSpace\Shaders\POLYGON_SpaceShip_Rim.shader" />
