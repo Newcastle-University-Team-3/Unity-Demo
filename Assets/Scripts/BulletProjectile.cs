@@ -7,6 +7,12 @@ using UnityEngine;
 
 public class BulletProjectile : MonoBehaviour
 {
+    [Space]
+    public Color paintColor;
+    public float radius;
+    public float hardness;
+    public float strength;
+
     private Rigidbody bulletRigidbody;
 
     private void Awake()
@@ -26,7 +32,8 @@ public class BulletProjectile : MonoBehaviour
         Vector3 pos = collision.contacts[0].point;
         if (p!=null)
         {
-            PaintManager.instance.paint(p,pos,1.0f,0.5f,0.5f,Color.blue);
+            //Why I can not use public vector for paintColor here
+            PaintManager.instance.paint(p,pos, radius, hardness, strength, Color.red);
         }
     }
 

@@ -46,6 +46,7 @@ Shader "Custom/ExtendIslands"{
                     float4 color = tex2D(_MainTex, uv);
                     float4 island = tex2D(_UVIslands, uv);
 
+                    //比较涂色的地方和四周的颜色的rgba值的大小
                     if (island.z < 1) {
                         float4 extendedColor = color;
                         for (int i = 0; i < offsets.Length; i++) {

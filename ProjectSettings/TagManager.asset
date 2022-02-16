@@ -18,6 +18,8 @@ TagManager:
   - Wood
   - CinemachineTarget
   - Floor
+  - Terrain
+  - Wall_Light
   layers:
   - Default
   - TransparentFX

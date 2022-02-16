@@ -56,14 +56,14 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\StarterAssets\Editor\StarterAssetsDeployMenu.cs" />
-    <Compile Include="Assets\StarterAssets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
-    <Compile Include="Assets\StarterAssets\Editor\PackageChecker\PackageChecker.cs" />
-    <Compile Include="Assets\StarterAssets\Editor\ScriptingDefineUtils.cs" />
-    <Compile Include="Assets\StarterAssets\Editor\ThirdPersonStarterAssetsDeployMenu.cs" />
+    <Compile Include="Assets\Assets_OUTER\StarterAssets\Editor\StarterAssetsDeployMenu.cs" />
+    <Compile Include="Assets\Assets_OUTER\StarterAssets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Assets\Assets_OUTER\StarterAssets\Editor\PackageChecker\PackageChecker.cs" />
+    <Compile Include="Assets\Assets_OUTER\StarterAssets\Editor\ScriptingDefineUtils.cs" />
+    <Compile Include="Assets\Assets_OUTER\StarterAssets\Editor\ThirdPersonStarterAssetsDeployMenu.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\StarterAssets\Editor\PackageChecker\PackageImportList.txt" />
+    <None Include="Assets\Assets_OUTER\StarterAssets\Editor\PackageChecker\PackageImportList.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

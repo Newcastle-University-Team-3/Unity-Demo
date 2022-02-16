@@ -64,8 +64,8 @@ public class PaintManager : Singleton<PaintManager>
         Color? color = null)
     {
         RenderTexture mask = paintable.GetMask();
-        RenderTexture uvIslands = paintable.GetUVIslands();     //?
-        RenderTexture extend = paintable.GetExtend();       //?
+        RenderTexture uvIslands = paintable.GetUVIslands();    
+        RenderTexture extend = paintable.GetExtend();       
         RenderTexture support = paintable.GetSupport();
 
         Renderer renderer = paintable.GetRenderer();
@@ -92,8 +92,6 @@ public class PaintManager : Singleton<PaintManager>
 
         commandBuffer.SetRenderTarget(extend);
         commandBuffer.Blit(mask,extend,extendMaterial);
-
-        Debug.Log(1);
 
         //Do Render
         Graphics.ExecuteCommandBuffer(commandBuffer);
