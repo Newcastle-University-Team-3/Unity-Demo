@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleWebTransport", "SimpleWebTransport.csproj", "{3A2DF8CD-41B2-58A1-94BE-0A99291FEAF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Examples", "Mirror.Examples.csproj", "{917955E8-A5A9-E6A6-2922-303B0279D7DB}"
@@ -9,9 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror", "Mirror.csproj", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mirror.Components", "Mirror.Components.csproj", "{A4037B58-6201-7583-24D0-F5D9370169EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telepathy", "Telepathy.csproj", "{F1B61351-128F-D23E-73D3-AB2B6A618064}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{F6128B76-E25D-386B-611F-F177C2CCAF98}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Telepathy", "Telepathy.csproj", "{F1B61351-128F-D23E-73D3-AB2B6A618064}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kcp2k", "kcp2k.csproj", "{5C80C07A-ABB0-A0A7-8095-48A5A94AEC64}"
 EndProject
@@ -51,14 +51,14 @@ Global
 		{A4037B58-6201-7583-24D0-F5D9370169EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A4037B58-6201-7583-24D0-F5D9370169EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A4037B58-6201-7583-24D0-F5D9370169EB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F1B61351-128F-D23E-73D3-AB2B6A618064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F1B61351-128F-D23E-73D3-AB2B6A618064}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F1B61351-128F-D23E-73D3-AB2B6A618064}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F1B61351-128F-D23E-73D3-AB2B6A618064}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F6128B76-E25D-386B-611F-F177C2CCAF98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F6128B76-E25D-386B-611F-F177C2CCAF98}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6128B76-E25D-386B-611F-F177C2CCAF98}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6128B76-E25D-386B-611F-F177C2CCAF98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1B61351-128F-D23E-73D3-AB2B6A618064}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B61351-128F-D23E-73D3-AB2B6A618064}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B61351-128F-D23E-73D3-AB2B6A618064}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B61351-128F-D23E-73D3-AB2B6A618064}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5C80C07A-ABB0-A0A7-8095-48A5A94AEC64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5C80C07A-ABB0-A0A7-8095-48A5A94AEC64}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C80C07A-ABB0-A0A7-8095-48A5A94AEC64}.Release|Any CPU.ActiveCfg = Release|Any CPU

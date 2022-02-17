@@ -44,7 +44,9 @@ public class shooterController : MonoBehaviour
             aimVirtualCamera.gameObject.SetActive(true);
             thirdPersonController.SetRotateOnMove(false);
             thirdPersonController.SetSensitivity(aimSensitivity);
+            animator.SetLayerWeight(0,Mathf.Lerp(animator.GetLayerWeight(1),0.0f,Time.deltaTime * 10.0f));
             animator.SetLayerWeight(1,Mathf.Lerp(animator.GetLayerWeight(1),1.0f,Time.deltaTime * 10.0f));
+            animator.SetLayerWeight(2,Mathf.Lerp(animator.GetLayerWeight(1),1.0f,Time.deltaTime * 10.0f));
 
             Vector3 aimTarget = mouseWorldPosition;
             aimTarget.y = transform.position.y;
@@ -57,7 +59,9 @@ public class shooterController : MonoBehaviour
             aimVirtualCamera.gameObject.SetActive(false);
             thirdPersonController.SetSensitivity(normalSensitivity);
             thirdPersonController.SetRotateOnMove(true);
+            animator.SetLayerWeight(0, Mathf.Lerp(animator.GetLayerWeight(1), 1.0f, Time.deltaTime * 10.0f));
             animator.SetLayerWeight(1, Mathf.Lerp(animator.GetLayerWeight(1), 0.0f, Time.deltaTime * 10.0f));
+            animator.SetLayerWeight(2, Mathf.Lerp(animator.GetLayerWeight(1), 0.0f, Time.deltaTime * 10.0f));
         }
 
         if (starterAssetsInputs.shoot)
