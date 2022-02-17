@@ -8,7 +8,7 @@ public class Paintable : MonoBehaviour
     private const int TEXTURE_SIZE = 1024;
 
     public float extendIsLandOffset = 1;    //?
-
+    
     private RenderTexture extendIsIandsRenderTexture;
     private RenderTexture uvRenderTexture;
     private RenderTexture maskRenderTexture;
@@ -26,6 +26,7 @@ public class Paintable : MonoBehaviour
 
     void Start()
     {
+
         maskRenderTexture = new RenderTexture(TEXTURE_SIZE, TEXTURE_SIZE, 0);
         maskRenderTexture.filterMode = FilterMode.Bilinear;
 
@@ -41,9 +42,9 @@ public class Paintable : MonoBehaviour
         rend = GetComponent<Renderer>();
         rend.material.SetTexture(maskTextureID,extendIsIandsRenderTexture);
 
-       
+
         PaintManager.instance.initTextures(this);
-        
+
     }
 
     private void OnDisable()

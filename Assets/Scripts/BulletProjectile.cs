@@ -7,8 +7,10 @@ using UnityEngine;
 
 public class BulletProjectile : MonoBehaviour
 {
-    [Space]
-    public Color paintColor;
+    [SerializeField] public Color paintColor;
+
+    private Color colorInScript = Color.red;
+
     public float radius;
     public float hardness;
     public float strength;
@@ -33,8 +35,10 @@ public class BulletProjectile : MonoBehaviour
         if (p!=null)
         {
             //Why I can not use public vector for paintColor here
-            Debug.Log(1);
-            PaintManager.instance.paint(p,pos, radius, hardness, strength, Color.red);
+            
+            Debug.Log(paintColor);
+            Debug.Log(colorInScript);
+            PaintManager.instance.paint(p,pos, radius, hardness, strength, paintColor);
         }
     }
 

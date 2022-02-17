@@ -56,7 +56,6 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
         if (verbose)
             Debug.Log("SingleAccessPoint instance found " + instance.GetType().Name);
-
     }
 
 }

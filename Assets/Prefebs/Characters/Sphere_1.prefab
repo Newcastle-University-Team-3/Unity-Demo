@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe8c2c175c04f843a30e37c13886d6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paintColor: {r: 1, g: 0.02821758, b: 0, a: 0}
+  paintColor: {r: 0.015426505, g: 0.17651682, b: 0.9811321, a: 1}
   radius: 1
   hardness: 0.5
   strength: 0.5

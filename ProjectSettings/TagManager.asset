@@ -20,6 +20,7 @@ TagManager:
   - Floor
   - Terrain
   - Wall_Light
+  - PaintManager
   layers:
   - Default
   - TransparentFX

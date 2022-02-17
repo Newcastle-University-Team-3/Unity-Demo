@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
-
 public class PaintManager : Singleton<PaintManager>
 {
     public Shader texturePaint; //Paint with texture
@@ -29,7 +28,7 @@ public class PaintManager : Singleton<PaintManager>
 
     public override void Awake()
     {
-        base.Awake();
+        //base.Awake();
 
         paintMaterial = new Material(texturePaint);
         extendMaterial = new Material(extendIslands);
