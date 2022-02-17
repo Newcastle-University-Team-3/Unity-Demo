@@ -6,14 +6,14 @@ using UnityEngine;
 
 public class SphereCollide : NetworkBehaviour
 {
-    public Rigidbody rigidbody;
+    public Rigidbody rg;
     //private GameObject floor_collided;
     public GameObject headPoint;
     public GameObject startPoint;
  
     void Start()
     {
-        rigidbody.AddForce((headPoint.transform.position - startPoint.transform.position) * 100.0f);
+        rg.AddForce((headPoint.transform.position - startPoint.transform.position) * 100.0f);
     }
 
     void Update()

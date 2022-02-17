@@ -23,11 +23,13 @@ public class ColorDetection : MonoBehaviour
 
         if (Physics.Raycast(_colorDetectionPoint.position,Vector3.down, out hitInfo, 0.20f))
         {
-            //Debug.Log("DO HIT");
-            //Debug.Log(hitInfo.transform.tag);
+            Debug.Log("DO HIT");
+            Debug.Log(hitInfo.transform.tag);
         }
-        Debug.Log(transform.position);
-        Debug.Log(transform.name);
+        
+        //?????????
+        //Debug.Log(transform.position);
+        //Debug.Log(transform.name);
     }
 
 }
