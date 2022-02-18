@@ -35,9 +35,6 @@ public class BulletProjectile : MonoBehaviour
         if (p!=null)
         {
             //Why I can not use public vector for paintColor here
-            
-            Debug.Log(paintColor);
-            Debug.Log(colorInScript);
             PaintManager.instance.paint(p,pos, radius, hardness, strength, paintColor);
         }
     }
