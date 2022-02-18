@@ -30,11 +30,10 @@ public class ColorDetection : MonoBehaviour
         RaycastHit hitInfo;
 
         if (Physics.Raycast(_colorDetectionPoint.position,Vector3.down, out hitInfo, 0.20f))
-        {
-            Debug.Log("DO HIT");
-            Debug.Log(hitInfo.transform.tag);
+        { 
 
-        //test: 从纹理中获取像素颜色？
+         //Goal:从Rendertexture中取出射线碰撞的时候所检测到的颜色
+         //
 
         //Test how to get mask's pixel
             Material material = hitInfo.collider.GetComponent<MeshRenderer>().material;
@@ -45,8 +44,8 @@ public class ColorDetection : MonoBehaviour
             rayUVPosition = hitInfo.textureCoord;
 
             //将float转成int，取float的整数位
-            int _UVx = Mathf.FloorToInt(hitInfo.point.x);
-            int _UVy = Mathf.FloorToInt(hitInfo.point.y);
+            int _UVx = Mathf.FloorToInt(rayUVPosition.x);
+            int _UVy = Mathf.FloorToInt(rayUVPosition.y);
 
             Debug.Log("x" + _UVx + " , y"+_UVy );
 
