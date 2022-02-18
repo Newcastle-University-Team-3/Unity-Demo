@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 public class ColorDetection : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class ColorDetection : MonoBehaviour
     void Update()
     {
         colorDetect();
+        Debug.Log(transform.position);
     }
 
     public void colorDetect()
@@ -33,7 +35,8 @@ public class ColorDetection : MonoBehaviour
         { 
 
          //Goal:从Rendertexture中取出射线碰撞的时候所检测到的颜色
-         //
+         //在maskRenderTexture上取颜色
+         //将maskRenderTexture保存在一张texture2D上
 
         //Test how to get mask's pixel
             Material material = hitInfo.collider.GetComponent<MeshRenderer>().material;
@@ -47,12 +50,14 @@ public class ColorDetection : MonoBehaviour
             int _UVx = Mathf.FloorToInt(rayUVPosition.x);
             int _UVy = Mathf.FloorToInt(rayUVPosition.y);
 
-            Debug.Log("x" + _UVx + " , y"+_UVy );
-
-            _color_Get = _testtexture2D.GetPixel(_UVx, _UVy);
+            //Debug.Log("x" + _UVx + " , y"+_UVy );
 
 
-            Debug.Log(_color_Get);
+
+            //_color_Get = _testtexture2D.GetPixel(_UVx, _UVy);
+
+
+            //Debug.Log(_color_Get);
             
 
            
@@ -60,12 +65,6 @@ public class ColorDetection : MonoBehaviour
 
             //pixelColor =  _texture2D.GetPixel(_UVx, _UVy);
         }
-        
-
-
-        //?????????
-        //Debug.Log(transform.position);
-        //Debug.Log(transform.name);
     }
 
     public Texture2D TextureToTexture2D(Texture texture)
@@ -85,6 +84,25 @@ public class ColorDetection : MonoBehaviour
         RenderTexture.ReleaseTemporary(renderTexture);
 
         return texture2D;
+    }
+
+    public Texture2D SaveRenderTexture(RenderTexture renderTexture)
+    {
+        //var eye = Eyes[0];
+        Texture2D _textureOutput = new Texture2D(renderTexture.width,renderTexture.height,TextureFormat.RGBA32,false);
+        
+        //Store current RenderTexture
+        RenderTexture currentRT = RenderTexture.active;
+        Graphics.Blit(_textureOutput,renderTexture);
+
+        RenderTexture.active = renderTexture;
+        _textureOutput.ReadPixels(new Rect(0,0,renderTexture.width,renderTexture.height),0,0);
+        
+        //保存准备好的texture2D
+        byte[] bytes = _textureOutput.EncodeToPNG();
+        //String path = string.Format(@"/Assets/texture2D/Temp_Texture",);
+
+        return _textureOutput;
     }
 
 }

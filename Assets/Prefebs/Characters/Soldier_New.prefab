@@ -4139,7 +4139,7 @@ GameObject:
   - component: {fileID: 1077566915285685362}
   - component: {fileID: 2661662602603698754}
   - component: {fileID: 1235843244320672247}
-  - component: {fileID: 260601484}
+  - component: {fileID: 1599504093369884454}
   m_Layer: 3
   m_Name: Soldier_New
   m_TagString: Player
@@ -4505,7 +4505,7 @@ MonoBehaviour:
   - {fileID: 1077566915252989923}
   - {fileID: 1077566914699152264}
   - {fileID: 1077566914081080129}
---- !u!114 &260601484
+--- !u!114 &1599504093369884454
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4517,6 +4517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a761d6c0fe015142ac777c05b3de6ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _colorDetectionPoint: {fileID: 4518881105911908777}
 --- !u!1 &1077566915340468446
 GameObject:
   m_ObjectHideFlags: 0
@@ -5039,7 +5040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8636245219390556203}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.155, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1077566915285685363}

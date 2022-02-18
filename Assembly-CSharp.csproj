@@ -72,6 +72,7 @@
     <Compile Include="Assets\Assets_OUTER\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualJoystick.cs" />
     <Compile Include="Assets\Assets_OUTER\StarterAssets\Mobile\Scripts\VirtualInputs\UIVirtualTouchZone.cs" />
     <Compile Include="Assets\Scripts\tankPrefeb.cs" />
+    <Compile Include="Assets\Scripts\Paint\ColorDetection.cs" />
     <Compile Include="Assets\Assets_OUTER\Artillery Tank\Demo Scene\CameraController.cs" />
     <Compile Include="Assets\Assets_OUTER\StarterAssets\ThirdPersonController\Scripts\BasicRigidBodyPush.cs" />
     <Compile Include="Assets\Assets_OUTER\StarterAssets\TutorialInfo\Scripts\Readme.cs" />
@@ -85,7 +86,7 @@
     <Compile Include="Assets\Assets_OUTER\SMC Pack 1\Demo\DemoAssets\V_SMC_Camera.cs" />
     <Compile Include="Assets\Scripts\Camera\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Tutorial(TEMP)\Grid.cs" />
-    <Compile Include="Assets\Scripts\Paint\ColorDetection.cs" />
+    <Compile Include="Assets\Scripts\PostionTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Assets_OUTER\Mirror\Plugins\Mono.Cecil\Mono.CecilX.dll" />
