@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -26,15 +27,20 @@ public class PaintManager : Singleton<PaintManager>
 
     private CommandBuffer commandBuffer;
 
+    //Save RenderTexture:Mask
+    [HideInInspector]
+    public Texture2D maskSaved;
+
     public override void Awake()
     {
         //base.Awake();
-
         paintMaterial = new Material(texturePaint);
         extendMaterial = new Material(extendIslands);
 
         commandBuffer = new CommandBuffer();
         commandBuffer.name = "CommandBuffer - " + gameObject.name;
+
+        maskSaved = new Texture2D(1024,1024);
     }
 
     public void initTextures(Paintable paintable)
@@ -95,5 +101,35 @@ public class PaintManager : Singleton<PaintManager>
         //Do Render
         Graphics.ExecuteCommandBuffer(commandBuffer);
         commandBuffer.Clear();
+
+        //Save mask
+        //RenderTexture active = RenderTexture.active;
+        
+        //maskSaved.ReadPixels(new Rect(0,0,RenderTexture.active.width,RenderTexture.active.height),0,0);
     }
+
+    //private void SaveRenderTexture(RenderTexture rt)
+    //{
+    //    RenderTexture active = RenderTexture.active;
+    //    RenderTexture.active = rt;  
+    //    Texture2D png = new Texture2D(rt.width, rt.height, TextureFormat.ARGB32, false);
+    //    png.ReadPixels(new Rect(0,0,rt.width,rt.height),0,0);
+    //    png.Apply();
+    //    RenderTexture.active = active;
+        
+    //    //Write into file
+    //    byte[] bytes = png.EncodeToPNG();
+    //    string path = string.Format("Assets/texture2D/Temp_Texture/rt_{0}_{1}_{2}.png", DateTime.Now.Hour,
+    //        DateTime.Now.Minute, DateTime.Now.Second);
+    //    FileStream fs = File.Open(path, FileMode.Create);
+    //    BinaryWriter writer = new BinaryWriter(fs);
+    //    writer.Write(bytes);
+    //    writer.Flush();
+    //    writer.Close();
+    //    fs.Close();
+    //    Destroy(png);
+    //    png = null;
+    //    Debug.Log("保存成功" + path);
+    //}
+
 }

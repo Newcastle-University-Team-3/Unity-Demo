@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
 
@@ -23,7 +24,6 @@ public class ColorDetection : MonoBehaviour
     void Update()
     {
         colorDetect();
-        Debug.Log(transform.position);
     }
 
     public void colorDetect()
@@ -31,39 +31,27 @@ public class ColorDetection : MonoBehaviour
 
         RaycastHit hitInfo;
 
-        if (Physics.Raycast(_colorDetectionPoint.position,Vector3.down, out hitInfo, 0.20f))
-        { 
-
-         //Goal:从Rendertexture中取出射线碰撞的时候所检测到的颜色
-         //在maskRenderTexture上取颜色
-         //将maskRenderTexture保存在一张texture2D上
-
-        //Test how to get mask's pixel
-            Material material = hitInfo.collider.GetComponent<MeshRenderer>().material;
-            Texture _testtexture = material.GetTexture("_MaskTexture");
-
-            Texture2D _testtexture2D = TextureToTexture2D(_testtexture);
-
-            rayUVPosition = hitInfo.textureCoord;
-
-            //将float转成int，取float的整数位
-            int _UVx = Mathf.FloorToInt(rayUVPosition.x);
-            int _UVy = Mathf.FloorToInt(rayUVPosition.y);
-
-            //Debug.Log("x" + _UVx + " , y"+_UVy );
+        if (Physics.Raycast(_colorDetectionPoint.position, Vector3.down, out hitInfo, 0.20f))
+        {
 
 
 
-            //_color_Get = _testtexture2D.GetPixel(_UVx, _UVy);
+            //Goal:从Rendertexture中取出射线碰撞的时候所检测到的颜色
+            //在maskRenderTexture上取颜色
+            //将maskRenderTexture保存在一张texture2D上
 
+            //Test how to get mask's pixel
+            RenderTexture maskRenderTexture = hitInfo.collider.GetComponent<Paintable>().GetExtend();
 
-            //Debug.Log(_color_Get);
-            
+            RenderTexture test = RenderTexture.GetTemporary(1024,1024,0);
 
-           
-            //if (_texture2D != null) Debug.Log(_texture2D.GetPixel(_UVx, _UVy));
-
-            //pixelColor =  _texture2D.GetPixel(_UVx, _UVy);
+            if (Input.GetKeyDown(KeyCode.F4))
+            {
+                SaveRenderTexture(maskRenderTexture);
+                //Debug.Log(hitInfo.textureCoord);
+                //Debug.Log(_texture2D.GetPixel((int)hitInfo.textureCoord.x,(int)hitInfo.textureCoord.y));
+                Debug.Log(_texture2D.isReadable);
+            }
         }
     }
 
@@ -86,23 +74,30 @@ public class ColorDetection : MonoBehaviour
         return texture2D;
     }
 
-    public Texture2D SaveRenderTexture(RenderTexture renderTexture)
+
+    private void SaveRenderTexture(RenderTexture rt)
     {
-        //var eye = Eyes[0];
-        Texture2D _textureOutput = new Texture2D(renderTexture.width,renderTexture.height,TextureFormat.RGBA32,false);
-        
-        //Store current RenderTexture
-        RenderTexture currentRT = RenderTexture.active;
-        Graphics.Blit(_textureOutput,renderTexture);
+        RenderTexture active = RenderTexture.active;
+        RenderTexture.active = rt;
+        Texture2D png = new Texture2D(rt.width, rt.height, TextureFormat.ARGB32, false);
+        _texture2D = png;   //keep png 
+        png.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
+        png.Apply();
+        RenderTexture.active = active;
 
-        RenderTexture.active = renderTexture;
-        _textureOutput.ReadPixels(new Rect(0,0,renderTexture.width,renderTexture.height),0,0);
-        
-        //保存准备好的texture2D
-        byte[] bytes = _textureOutput.EncodeToPNG();
-        //String path = string.Format(@"/Assets/texture2D/Temp_Texture",);
-
-        return _textureOutput;
+        //Write into file
+        byte[] bytes = png.EncodeToPNG();
+        string path = string.Format("Assets/texture2D/Temp_Texture/rt_{0}_{1}_{2}.png", DateTime.Now.Hour,
+            DateTime.Now.Minute, DateTime.Now.Second);
+        FileStream fs = File.Open(path, FileMode.Create);
+        BinaryWriter writer = new BinaryWriter(fs);
+        writer.Write(bytes);
+        writer.Flush();
+        writer.Close();
+        fs.Close();
+        Destroy(png);
+        png = null;
+        Debug.Log("保存成功" + path);
     }
 
 }
