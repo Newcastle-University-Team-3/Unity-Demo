@@ -4,16 +4,15 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.UI;
 
 public class ColorDetection : MonoBehaviour
 {
     public Transform _colorDetectionPoint;
-    private Color _color_Get;
-
     private Texture2D _texture2D;
+    public Color[] pixelColor;
 
-    private Vector2 rayUVPosition;
-    private Color pixelColor;
+    private string imagePath;
 
     void Start()
     {
@@ -33,24 +32,42 @@ public class ColorDetection : MonoBehaviour
 
         if (Physics.Raycast(_colorDetectionPoint.position, Vector3.down, out hitInfo, 0.20f))
         {
-
-
-
             //Goal:从Rendertexture中取出射线碰撞的时候所检测到的颜色
             //在maskRenderTexture上取颜色
             //将maskRenderTexture保存在一张texture2D上
-
-            //Test how to get mask's pixel
-            RenderTexture maskRenderTexture = hitInfo.collider.GetComponent<Paintable>().GetExtend();
+            
+            RenderTexture maskRenderTexture = hitInfo.collider.GetComponent<Paintable>().GetMask();
 
             RenderTexture test = RenderTexture.GetTemporary(1024,1024,0);
+
+            int uvX = Mathf.FloorToInt(hitInfo.textureCoord.x);
+            int uvY = Mathf.FloorToInt(hitInfo.textureCoord.y);
+
 
             if (Input.GetKeyDown(KeyCode.F4))
             {
                 SaveRenderTexture(maskRenderTexture);
-                //Debug.Log(hitInfo.textureCoord);
-                //Debug.Log(_texture2D.GetPixel((int)hitInfo.textureCoord.x,(int)hitInfo.textureCoord.y));
-                Debug.Log(_texture2D.isReadable);
+                //pixelColor = _texture2D.GetPixels(1020, 1020, 2, 2);
+                //for (int i = 0; i < pixelColor.Length; i++)
+                //{
+                //    Debug.Log(pixelColor[i]);
+                //}
+
+                FileStream fs = new FileStream("Assets/texture2D/Temp_Texture/rt.JPG", FileMode.Open, FileAccess.Read);
+                int byteLength = (int)fs.Length;
+                byte[] imgBytes = new byte[byteLength];
+                fs.Read(imgBytes, 0, byteLength);
+                fs.Close();
+                fs.Dispose();
+
+                Texture2D t2d = new Texture2D(1024,1024); ;
+                t2d.LoadImage(imgBytes);
+                t2d.Apply();
+                pixelColor = t2d.GetPixels(1000, 1000, 16, 16);
+                for (int i = 0; i < pixelColor.Length; i++)
+                {
+                    Debug.Log(pixelColor[i]);
+                }
             }
         }
     }
@@ -79,25 +96,26 @@ public class ColorDetection : MonoBehaviour
     {
         RenderTexture active = RenderTexture.active;
         RenderTexture.active = rt;
-        Texture2D png = new Texture2D(rt.width, rt.height, TextureFormat.ARGB32, false);
-        _texture2D = png;   //keep png 
-        png.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
-        png.Apply();
+        Texture2D texture2D = new Texture2D(rt.width, rt.height, TextureFormat.ARGB32, false);
+        
+        texture2D.ReadPixels(new Rect(0, 0, rt.width, rt.height), 0, 0);
+        texture2D.Apply();
+        _texture2D = texture2D;   //keep png 
         RenderTexture.active = active;
 
         //Write into file
-        byte[] bytes = png.EncodeToPNG();
-        string path = string.Format("Assets/texture2D/Temp_Texture/rt_{0}_{1}_{2}.png", DateTime.Now.Hour,
-            DateTime.Now.Minute, DateTime.Now.Second);
-        FileStream fs = File.Open(path, FileMode.Create);
+        byte[] bytes = texture2D.EncodeToJPG();
+        string imagePath = string.Format("Assets/texture2D/Temp_Texture/rt.JPG");
+        FileStream fs = File.Open(imagePath , FileMode.Create);
         BinaryWriter writer = new BinaryWriter(fs);
         writer.Write(bytes);
         writer.Flush();
         writer.Close();
         fs.Close();
-        Destroy(png);
-        png = null;
-        Debug.Log("保存成功" + path);
+
+        Destroy(texture2D);
+        texture2D = null;
+        Debug.Log("保存成功" + imagePath);
     }
 
 }
